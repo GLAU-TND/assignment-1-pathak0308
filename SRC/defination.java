@@ -114,15 +114,33 @@ public class defination<Person> implements ADT<Person> {
         return temp;
     }
 
+    public void search(String person) {
+
+        for (int i = 0; i < FirstName.size(); i++) {
+            if (person.compareTo(FirstName.get(i).toString()) == 0) {
+                counter++;
+            }
+        }
+        if (counter != 0) {
+            System.out.println(counter + " match found!");
+            for (int i = 0; i < FirstName.size(); i++) {
+                if (person.compareTo(FirstName.get(i).toString()) == 0) {
+                    Node<Person> personNode = getNode(i);
+                    System.out.println(personNode.getData().toString());
+                }
+            }
+        } else {
+            System.out.println("NO MATCH FOUND!");
+        }
+
+
+    }
+
     @Override
     public boolean delete(int index) {
         return false;
     }
 
-    @Override
-    public void search(String person) {
-
-    }
 
     @Override
     public void viewAllDetails() {
