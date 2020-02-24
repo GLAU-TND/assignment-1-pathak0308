@@ -1,6 +1,47 @@
 import java.util.ArrayList;
 public class defination<Person> implements ADT<Person> {
     int counter=0;
+
+    public int getCounter() {
+        return counter;
+    }
+
+    public void setCounter(int counter) {
+        this.counter = counter;
+    }
+
+    public ArrayList<String> getName() {
+        return Name;
+    }
+
+    public void setName(ArrayList<String> name) {
+        Name = name;
+    }
+
+    public ArrayList<String> getFirstName() {
+        return FirstName;
+    }
+
+    public void setFirstName(ArrayList<String> firstName) {
+        FirstName = firstName;
+    }
+
+    public Node<Person> getHead() {
+        return head;
+    }
+
+    public void setHead(Node<Person> head) {
+        this.head = head;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
     private ArrayList<String> Name = new ArrayList<>();
     private ArrayList<String> FirstName = new ArrayList<>();
     private Node<Person> head = null;
@@ -58,6 +99,20 @@ public class defination<Person> implements ADT<Person> {
         return temp;
     }
 
+    private Person removeAfter(Node<Person> node) {
+        Person temp = null;
+        Node<Person> response = node.getNext();
+        if (response != null) {
+            node.next = response.getNext();
+            size--;
+            temp = response.getData();
+        }
+        if (temp == null) {
+            node = null;
+            size--;
+        }
+        return temp;
+    }
 
     @Override
     public boolean delete(int index) {
