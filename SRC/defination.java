@@ -14,6 +14,11 @@ public class defination<Person> implements ADT<Person> {
         return temp;
     }
 
+    private void addFirst(Person details) {
+        head = new Node<Person>(head, details);
+        size++;
+
+    }
 
     @Override
     public boolean add(Person details) {
