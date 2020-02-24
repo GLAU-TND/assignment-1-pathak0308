@@ -17,6 +17,14 @@ public class defination<Person> implements ADT<Person> {
     private void addFirst(Person details) {
         head = new Node<Person>(head, details);
         size++;
+    }
+
+    private void addAfter(Node node, Person details) {
+        Node<Person> temp = node;
+        if (node != null) {
+            temp.next = new Node(node.next, details);
+            size++;
+        }
 
     }
 
