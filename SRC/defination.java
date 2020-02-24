@@ -31,5 +31,31 @@ public class defination<Person> implements ADT<Person> {
 
             this.next = null;
         }
+
+        public Node(Node next, Person data) {
+            this.next = next;
+            this.data = data;
+
+        }
+
+        public Node getNext() {
+            return next;
+        }
+
+        public void setNext(Node next) {
+            this.next = next;
+        }
+
+        public Person getData() {
+            return data;
+        }
+
+        public void setData(Person data) {
+            this.data = data;
+        }
     }
+
 }
+
+
+
