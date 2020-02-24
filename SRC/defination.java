@@ -41,10 +41,11 @@ public class defination<Person> implements ADT<Person> {
         }
     }
 
-    @Override
     public boolean add(Person details) {
-        return false;
+        add(size, details);
+        return true;
     }
+
 
     @Override
     public boolean delete(int index) {
