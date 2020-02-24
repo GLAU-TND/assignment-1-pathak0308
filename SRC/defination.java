@@ -1,6 +1,11 @@
 import java.util.ArrayList;
 public class defination<Person> implements ADT<Person> {
-    int counter = 0;
+    int counter=0;
+    private ArrayList<String> Name = new ArrayList<>();
+    private ArrayList<String> FirstName = new ArrayList<>();
+    private Node<Person> head = null;
+    private int size = 0;
+
 
     @Override
     public boolean add(Person details) {
@@ -23,13 +28,13 @@ public class defination<Person> implements ADT<Person> {
     }
 
     private static class Node<Person> {
-        private Node next = null;
-        private Person data = null;
+                private Node next = null;
+                private Person data = null;
 
-        public Node(Person data) {
-            this.data = data;
+                public Node(Person data) {
+                    this.data = data;
 
-            this.next = null;
+                    this.next = null;
         }
 
         public Node(Node next, Person data) {
