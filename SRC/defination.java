@@ -132,14 +132,26 @@ public class defination<Person> implements ADT<Person> {
         } else {
             System.out.println("NO MATCH FOUND!");
         }
-
-
     }
 
-    @Override
+
     public boolean delete(int index) {
-        return false;
+        boolean response = false;
+        if (index - 1 < 0 || (index - 1) > getSize()) {
+            throw new IndexOutOfBoundsException(Integer.toString(index - 1));
+        } else if (index - 1 == 0) {
+            removeFirst();
+            Name.remove(index - 1);
+            response = true;
+        } else {
+            Node<Person> previousNode = getNode(index - 1);
+            removeAfter(previousNode);
+            Name.remove(index - 1);
+            response = true;
+        }
+        return response;
     }
+
 
 
     @Override
