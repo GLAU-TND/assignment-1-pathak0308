@@ -28,6 +28,19 @@ public class defination<Person> implements ADT<Person> {
 
     }
 
+    private void add(int index, Person details) {
+        if (index == 0) {
+            addFirst(details);
+        }
+        if (index < 0 && index > size) {
+            throw new IndexOutOfBoundsException("the index is invalid");
+        } else {
+            Node node = getNode(index - 1);
+            addAfter(node.next, details);
+
+        }
+    }
+
     @Override
     public boolean add(Person details) {
         return false;
@@ -57,6 +70,8 @@ public class defination<Person> implements ADT<Person> {
 
                     this.next = null;
         }
+
+
 
         public Node(Node next, Person data) {
             this.next = next;
