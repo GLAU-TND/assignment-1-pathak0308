@@ -45,6 +45,18 @@ public class defination<Person> implements ADT<Person> {
         add(size, details);
         return true;
     }
+    private Person removeFirst() {
+        Person temp = null;
+        Node<Person> node = head;
+        if (head != null) {
+            head = head.getNext();
+        }
+        if (node != null) {
+            size--;
+            temp = node.getData();
+        }
+        return temp;
+    }
 
 
     @Override
