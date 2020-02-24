@@ -10,7 +10,7 @@ public class Main {
         String Lastname;
         String[] contactno = new String[3];
         defination definte = new defination();
-        System.out.println("welcome to Prateek Contact list");
+        System.out.println("welcome to Priyanshu's Contact list");
         System.out.println("Press 1 for adding the contact\n" +
                 "Press 2 for viewing all the contacts\n" +
                 "Press 3 for searching in the contacts\n" +
@@ -27,7 +27,7 @@ public class Main {
                 Lastname = scanner.next();
                 System.out.println("Please enter the contact no");
                 contactno[0] = scanner.next();
-                System.out.println("Would you like to add another contact number? (y/n)");
+                System.out.println("Would you like to add another contact number? (yes/no)");
                 char choice = scanner.next().charAt(0);
                 if (choice == 'y') {
                     System.out.println("please enter another contact no");
