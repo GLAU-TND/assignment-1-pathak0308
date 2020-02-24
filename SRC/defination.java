@@ -151,13 +151,20 @@ public class defination<Person> implements ADT<Person> {
         }
         return response;
     }
-
-
-
     @Override
     public void viewAllDetails() {
+        if (size != 0) {
+            System.out.println("---Here are your all contacts---");
+            for (int i = 0; i < size; i++) {
 
+                Person data = this.getNode(i).getData();
+                System.out.print(data);
+            }
+        } else {
+            System.out.println("NO RESULTS FOUND!");
+        }
     }
+
 
     private static class Node<Person> {
                 private Node next = null;
